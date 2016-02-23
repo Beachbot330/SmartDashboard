@@ -186,6 +186,7 @@ public class CANSpeedController extends AbstractTableWidget implements Controlle
     public void propertyChanged(Property property) {
         pidControlPanel.propertyChanged(property);
         normalControlPanel.propertyChanged(property);
+        repaint();
     }
 
     @Override
@@ -225,6 +226,7 @@ public class CANSpeedController extends AbstractTableWidget implements Controlle
                     break;
             }
         }
+        repaint();
     }
 
     /**
