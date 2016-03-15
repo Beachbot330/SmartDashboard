@@ -324,7 +324,7 @@ public class DashboardFrame extends JFrame {
                         liveWindowPanel.setField(subsystem.getFieldName(), subsystem, type, value1, subsystem.getSavedLocation());
                     }
                 } else {
-                    liveWindowPanel.setField(subsystem.getFieldName(), subsystem, subsystem.getType(), null, subsystem.getSavedLocation());
+                    liveWindowPanel.setField(subsystem.getFieldName(), subsystem, subsys.getType(), null, subsystem.getSavedLocation());
                 }
                 for(XMLWidget component : reader.getSubwidgetMap(subsys).values()) {
                     System.out.println("Adding subcomponent \""+component.getField()+"\"");
