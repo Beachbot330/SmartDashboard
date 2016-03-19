@@ -323,7 +323,7 @@ public abstract class Widget extends DisplayElement {
     public static abstract class NumberField extends EditorTextField implements NumberBindable {
 
         private double value = Double.NaN;
-        private DecimalFormat formatter = new DecimalFormat("0.000", new DecimalFormatSymbols(Locale.US));
+        private DecimalFormat formatter = new DecimalFormat("0.00000", new DecimalFormatSymbols(Locale.US));
 
         protected void textChanged(String text) {
             try {
