@@ -24,6 +24,7 @@ public class DefaultDisplayElementRegistrar {
         DisplayElementRegistry.registerWidget(Subsystem.class);
         DisplayElementRegistry.registerWidget(Command.class);
         DisplayElementRegistry.registerWidget(Scheduler.class);
+        DisplayElementRegistry.registerWidget(CANSpeedController.class);
         
         DisplayElementRegistry.registerStaticWidget(Image.class);
         DisplayElementRegistry.registerStaticWidget(ConnectionIndicator.class);
