@@ -156,16 +156,15 @@ public class Chooser extends AbstractTableWidget implements ITableListener {
         selection = null;
       }
 
-      if (table != null && table.containsKey(SELECTED)) {
-        selection = table.getString(SELECTED);
-      }
-
       if (table != null && selection != null) {
         table.putString(SELECTED, selection);
-        selected = buttons.get(selection);
-        selected.setSelected(true);
+        if (buttons.get(selection) != null) {
+          selected = buttons.get(selection);
+          selected.setSelected(true);
+        }
       } else {
         if (table != null && table.containsKey(DEFAULT)) {
+          selection = table.getString(DEFAULT);
           selected = buttons.get(table.getString(DEFAULT));
           selected.setSelected(true);
         } else {
@@ -185,7 +184,11 @@ public class Chooser extends AbstractTableWidget implements ITableListener {
 
     @Override
     void setSelected(String selected) {
-      buttons.get(selected).setSelected(true);
+      if (buttons.get(selected) != null) {
+        buttons.get(selected).setSelected(true);
+      } else {
+        group.clearSelection();
+      }
     }
 
     public void actionPerformed(ActionEvent e) {
